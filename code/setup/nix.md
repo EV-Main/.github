@@ -1,3 +1,5 @@
+We standardize on [Determinate Nix](https://determinate.systems/nix/) — it's the only supported distribution. It is preferred for speed (`lazy-trees = true`) and stability, and some repos rely on lazy trees to the point they will outright refuse to compile on upstream Nix.
+
 For flake integration, all repos in this organization rely on [v_flakes](https://github.com/valeratrades/v_flakes)[^1] Eg:
 [^1]
 for more information, read docs there.
