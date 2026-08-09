@@ -23,6 +23,8 @@ functions.sh
 result
 .direnv/
 .devenv/
+### store symlink written by git-hooks.nix' installationScript; the path is per-rev, so tracking it only ever produces churn
+.pre-commit-config.yaml
 
 ## Vim
 *.sw[po]
@@ -41,6 +43,11 @@ result
 .venv/
 env/
 venv/
+.env.*
+!**/*.env.example
+./*/.env
+./*/.env.*
+
 
 ## VS Code
 .vscode/*
@@ -57,6 +64,22 @@ venv/
 
 ## Web
 **/*.sass-cache/
+**/node_modules/
+**/.next/
+**/.turbo/
+**/dist/
+
+## LLMs
+AGENTS.md
+CLAUDE.md
+.claude/
 
 ## Other Tools
 .codeviz/
+### written by `qlty init`, which CI re-runs from scratch on every job
+.qlty/
+graphify-out/
+**/.redis/
+**/.tb/
+**/.tb-client
+**/.pg/
