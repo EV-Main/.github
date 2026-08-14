@@ -18,6 +18,9 @@ type(scope)!: description
 - `scope` — optional, area of change: `feat(auth):`, `fix(ws):`
 - `!` — marks a breaking change (see _Breaking changes_)
 
+> if a commit contains multiple unrelated changes, you can join them over `&&` in the message.
+> It's advised to make a commit per semantic change, but we admit that in reality it's oftentimes too cumbersome to split them, hence this hack.
+
 ---
 
 ## Types
