@@ -4,5 +4,5 @@
 - [ahash](https://docs.rs/ahash/latest/ahash/)
 - [futures-util](https://docs.rs/futures-util/latest/futures_util/)
 - snapshot-testing: [insta](https://docs.rs/insta/latest/insta/) // if your repo doesn't have it, you're doing something very wrong
-- errors: `miette`, `eyre`
+- errors: `miette`, `eyre`, `thiserror` ([how](./errors.md))
 - `tracing`

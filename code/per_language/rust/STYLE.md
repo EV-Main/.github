@@ -16,3 +16,6 @@ struct Yak;
 ```
 
 **reason**: this way, auto-formatter for derives won't mix them together.
+
+## errors
+see [errors.md](./errors.md)
