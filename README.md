@@ -40,7 +40,7 @@ Current company operations bottleneck is defined in https://github.com/EV-invest
 
 > when referencing internal projects in speech, some names can be abbreviated; - an up-to-date glossary can be found here: [./docs/GLOSSARY.md]
 
-### [Code](./code)
+### [Code](/code)
 
 Standards for working with code are in ./code
 
@@ -50,9 +50,9 @@ Standards for working with code are in ./code
 
 It is easier to move fast if we all have shared understanding of the scope of our work; and a number of key resource references, that we can assume everyone is familiar with.
 
-- [Schwarzman biography](./resources/What_It_Takes_-_Stephen_A_Schwarzman.pdf), - this is how the largest Asset Manager in existence got started, we must be intimately familiar with factors that made it possible.
+- [Schwarzman biography](/resources/What_It_Takes_-_Stephen_A_Schwarzman.pdf), - this is how the largest Asset Manager in existence got started, we must be intimately familiar with factors that made it possible.
 
-- Yale's exact desired portfolio manager can be inferred from reading [Yale's David Swensen investing](./resources/Pioneering_Portfolio_Management_-_David_F_Swensen.pdf), - this is a partial blueprint to how we can make investment into ourselves desirable for these large players
+- Yale's exact desired portfolio manager can be inferred from reading [Yale's David Swensen investing](/resources/Pioneering_Portfolio_Management_-_David_F_Swensen.pdf), - this is a partial blueprint to how we can make investment into ourselves desirable for these large players
 
 - TODO: adapt [How to Succeed at MrBeast Productions](https://drive.google.com/file/d/1YaG9xpu-WQKBPUi8yQ4HaDYQLUSa7Y3J/view) to our scope
 
@@ -90,4 +90,4 @@ That's it. If you cannot articulate how a task will impact one of these, it is n
 
 ## Dev
 
-See [ARCHITECTURE.md](docs/ARCHITECTURE.md) for this repo's organization, before making changes.
+See [ARCHITECTURE.md](/docs/ARCHITECTURE.md) for this repo's organization, before making changes.
