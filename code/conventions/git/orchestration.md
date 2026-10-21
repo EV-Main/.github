@@ -7,29 +7,24 @@ sprints are self-imposed deadlines; while actual hard ones caused by external fa
 All opened issues should have an estimate attached. Use the **upper** part of the range when not certain.
 Very large features can omit it, which would imply that pre-selected sizes are not sufficiently large to cover the expected scope. This is only allowed if the issue has children, and raises questions on why it's not instead a milestone, (through which epics are normally handled).
 
+> epic issue vs milestone: milestones are **aggregates** of issue particles; care about **impact** of the work, and care about their absolute position in time. Issues are fully related, - so a very large piece of work, which is however self-contained and reasons about changing code first and foremost, will be a `t:epic` issue, not a milestone.
+
 all tasks past product backlog (sprint backlog and active), must have a person assigned.
 However, no such rule exists for tasks oustide, - new issues can be created and kept without anyone yet assigned to them.
 Be mindful of intent, - once you assign someone to an issue, they take its ownership. And only one person can be assigned to any one issue (if part of the implementation needs to be delegated, it should be done through creation of a child issue for that part of the work). <!--Done to drive strict ownership of all features. Absence of distinct leader on any task will lead to delegation of responsibility by all participants-->
 > you are expected to be aware of all your github notifications, and keep sorting of your Zenhub tasks up-to-date
 
 ## Labels
-Zenhub's `Priority` labels are to be used always, while `Task Type` is never to be marked.
+standardized labels are [defined in and brought by v_flakes](https://github.com/valeratrades/v_flakes/blob/main/github/labels.nix)
 
-instead of `Task Type` labels, we define [strict categorical buckets](https://github.com/EV-invest/.github/issues/4#issuecomment-4683864012) for labels used, and express this and more through them.
+v_flakes [skill](https://github.com/valeratrades/v_flakes/blob/main/skill/SKILL.md) has instructions on how to reason about them. Tldr is:
+- `i:*` for importance (0-9; higher - grander)
+- `h:*` expected number of hours
+- `t:` type, - {`t:task`, `t:bug`, `t:enhancement`, `t:question` (think of it as decide+explore), `t:architecture`, `t:epic`, etc}
 
-following buckets exist:
+then you can go deeper, and provide `category`: {`c:docs`, `c:test`, `c:ci`, `c:pef`, etc} and `extensions`: {`ext:good-first-issue`, `ext:wontfix`, `ext:claude`, etc}
 
-- `type` \
-  top-level distinction of __what does working on the issue entails__: {`t:task`, `t:bug`, `t:enhancement`, `t:question`} // `question` is a unification of what could've been `type:decide` + `type:explore`.
-  These are shared across all repos; are mutually exclusive; and are obligatory for selection when opening the issue.
-
-- `category` \
-  issue's classification: {`cat:docs`, `cat:test`, `cat:ci`, `cat:perf`, etc}
-  Specifying is optional; their base is synchronized across all repos, but each can and should define more, for categories specific to its domain.
-
-- `external` \
-  meta tags for external sorting/presentation/integrations, like {`ext:good-first-issue`, `ext:help-wanted`, `ext:wontfix`}
-  Specifying them is optional; synced across all repos.
+`i:*` is required, `h:*` and `t:` are expected
 
 ## Time Tracking
 [Clockify](https://app.clockify.me/calendar) will be integrated later. Manually using it is not realistic, so blocked by tooling automation. <!--Partial implementation already exists in https://github.com/valeratrades/tedi-->
