@@ -5,7 +5,7 @@ The single source of truth for shared standards and organization of **EV Investm
 umbrella org of EV Investment Fund. Owns:
 - https://github.com/EV-Service-Arb
 - https://github.com/EV-Quant
-- https://github.com/EV-Invest
+- https://github.com/EV-Fund
 
 ### Collaboration
 
