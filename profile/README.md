@@ -31,7 +31,7 @@ Current company operations bottleneck is defined in https://github.com/EV-invest
   > It is on you to set up notifications for server sections relavant to your work, and stay up-to-date on contained discussions.
 
 - Discussions around a specific impelementation {point / judgement call} are opened through GitHub Discussions. \
-  eg <https://github.com/EV-invest/scam_pump_liqs/discussions/12>
+  eg <https://github.com/EV-Quant/scam_pump_liqs/discussions/12>
   Difference from Issues: answers are not expected. You are adding to the knowledgebase/context of the project, but there is no expected change/decision riding on it (if there is, - open an Issue with "question" label).
 
 - GitHub Issues are the driver for any concerns with change/decision attached. \
