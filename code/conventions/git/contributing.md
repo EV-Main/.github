@@ -12,6 +12,8 @@ Eg we can have repositories with blogs or other documents/assets, that are not c
 by default, reviewer will approve the changes, while responsibility of final merging is on you.
 You can ask them to merge immediately and/or delete your feature branch after, but responsibily of ensuring both are done remains on you.
 
+> `assign` don't `request`. And except for most critical cases, don't pick more than one.
+
 ## PR vs Issue
 your pr must always be linked to a specific issue
 - Issue reasons about **what** and **why**
