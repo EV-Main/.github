@@ -1,3 +1,5 @@
+# EV-Specific Abbreviations <!-- General-scope words meanings are in ../code/conventions/GLOSSARY.md -->
+
 ## abbreviations for internal projects 
 - `zfa` — [Zero Fee Arb](https://github.com/EV-Quant/zero_fee_arb) // archived
 - `spl` — [Scam Pump Liqs](https://github.com/EV-Quant/scam_pump_liqs)

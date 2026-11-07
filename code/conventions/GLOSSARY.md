@@ -1,5 +1,6 @@
 words with a fixed meaning across all projects.
 
+# General-scope Word Meanings <!-- EV-specific abbreviations are ../../docs/GLOSSARY.md -->
 ## Settings
 - **config**: written specification that inits the project's settings, or part of them
 - **args**: command line arguments
