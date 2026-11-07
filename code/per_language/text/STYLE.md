@@ -19,7 +19,7 @@ Standard for mentioning multiple exclusive options.
 ## Semantic Primitives
 
 ### Grouping
-A multi-word phrase that acts as a single unit of meaning is wrapped in `{}` curlies, so it is read as one term.
+A multi-word phrase that acts as a single unit of meaning can be wrapped in `{}` curlies, so it is read as one term.
 ```txt
 point to {all deps we own and that could be changed during the work} exclusively by path patch
 ```
