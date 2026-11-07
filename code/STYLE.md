@@ -42,6 +42,18 @@ if condition {
 
 **reason**: with `<` and `<=` only, operands sit in number line order (`lo <= x && x <= hi`), so every comparison reads as one picture. A negated invariant has to be negated back in the reader's head, even without a literal `!`.
 
+> this is not forced, and is only a suggestion.
+> In more complex expressions we may want to show comparison cases around a specific var for example. This suggestion is about what the _default_.
+
+### Acronym Capitalization
+An acronym inside a camel-cased identifier is capitalized as a regular word.
+
+**wrong**: `VSRState`, `parseHTTPURL`
+
+**right**: `VsrState`, `parseHttpUrl`
+
+**reason**: word boundaries stay visible (`VSRState` reads as `VSR State` or `VS RState`), and conversion to snake case is mechanical: `VsrState` → `vsr_state`.
+
 ### Wrapper Field
 The main wrapped field of a newtype-ish struct.
 
