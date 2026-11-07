@@ -18,6 +18,13 @@ Standard for mentioning multiple exclusive options.
 
 ## Semantic Primitives
 
+### Grouping
+A multi-word phrase that acts as a single unit of meaning is wrapped in `{}` curlies, so it is read as one term.
+```txt
+point to {all deps we own and that could be changed during the work} exclusively by path patch
+```
+> [either-of](#either-of) is this same grouping, applied to a set of options
+
 ### Footnote
 in absence of markdown, an inline footnote can be marked in 2 ways:
 
