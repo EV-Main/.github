@@ -1,6 +1,6 @@
 # Git Commit Convention
 
-> Standard v2.1.0
+> Standard v2.2.0
 
 ---
 
@@ -77,6 +77,8 @@ Version format: **`MAJOR.MINOR.PATCH`**
 ## Release tag
 
 Tag format: `v{major}.{minor}.{patch}`. No dedicated release commit required.
+
+Work in progress: `v{major}.{minor}.{patch}-dev.{n}`, - the dot keeps `dev.10` after `dev.2`. Published, never auto-deployed.
 
 ---
 
