@@ -10,77 +10,40 @@ In cases where you wish to enforce situational conventions, - pin them in `docs/
 
 # Style
 ## General
-### Ifs Up
-**what**: a branch on a function's argument. [REF](https://matklad.github.io/2023/11/15/push-ifs-up-and-fors-down.html)
-
-**wrong**:
-```rust
-fn frobnicate(walrus: Option<Walrus>) {
-    let Some(walrus) = walrus else { return };
-    // ...
-}
-```
-
-**right**:
-```rust
-fn frobnicate(walrus: Walrus) {
-    // ...
-}
-```
-
-**reason**: the caller already knows whether it has a walrus; the check moves to where the information is, and the callee's signature states its precondition. Control flow concentrated in one function is easier to see redundant or dead branches in.
-
-### Fors Down
-**what**: an operation applied to many items. [REF](https://matklad.github.io/2023/11/15/push-ifs-up-and-fors-down.html)
+### [Push Ifs Up and Fors Down](https://matklad.github.io/2023/11/15/push-ifs-up-and-fors-down.html)
+Branch in the caller, where the information is; loop in the callee, which then sees the whole batch.
 
 **wrong**:
 ```rust
 for walrus in walruses {
-    frobnicate(walrus);
+    if condition { walrus.frobnicate() } else { walrus.transmogrify() }
 }
 ```
 
 **right**:
 ```rust
-fn frobnicate_batch(walruses: &[Walrus]) {
-    // ...
-}
-```
-
-**reason**: a function that sees the whole batch can amortize setup, reorder work, and vectorize; one that sees a single item cannot.
-
-### Number Line Comparisons
-**what**: ordered comparisons. [REF](https://matklad.github.io/2023/09/13/comparative-analysis.html)
-
-**wrong**: `x >= lo && hi >= x`
-
-**right**: `lo <= x && x <= hi`
-
-**reason**: written with `<` and `<=` only, operands read left to right in number line order, so one picture covers every comparison. Outside an interval is `x < lo || hi < x`.
-
-### Positive Invariants
-**what**: a condition guarding an invariant. [REF](https://matklad.github.io/2023/09/13/comparative-analysis.html)
-
-**wrong**:
-```rust
-if index >= xs.len() {
-    // ...
-}
-```
-
-**right**:
-```rust
-if index < xs.len() {
-    // ...
+if condition {
+    for walrus in walruses { walrus.frobnicate() }
 } else {
-    // ...
+    for walrus in walruses { walrus.transmogrify() }
 }
 ```
 
-**reason**: the invariant is `index < xs.len()`. Spelling its converse makes the reader negate it in their head, even without a literal `!`.
+**reason**: the branch is decided once instead of per item, and branches gathered in one place show which are redundant or dead. A loop that owns the whole batch can amortize setup and vectorize.
+
+### [Comparators](https://matklad.github.io/2023/09/13/comparative-analysis.html)
+- prefer `<` and `<=` over `>` and `>=`
+- state invariants positively:
+    ```rust
+    if index >= xs.len() {
+    }
+    ```
+    is a double negation semantically: the invariant is `index < xs.len()`
+
+**reason**: with `<` and `<=` only, operands sit in number line order (`lo <= x && x <= hi`), so every comparison reads as one picture. A negated invariant has to be negated back in the reader's head, even without a literal `!`.
 
 ### Wrapper Field
-**what**: the main wrapped field of a newtype-ish struct.
+The main wrapped field of a newtype-ish struct.
 
 **wrong**:
 ```python
@@ -102,7 +65,7 @@ class Klines:
 
 ## Errors
 ### Never Fail on User Input
-**what**: invalid input from a user: cli args, config, requests, forms.
+Invalid input from a user: cli args, config, requests, forms.
 
 **wrong**: panic, assert or unwrap on it.
 

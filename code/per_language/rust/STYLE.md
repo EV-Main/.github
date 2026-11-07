@@ -19,7 +19,7 @@ struct Yak;
 
 ## Time
 ### Durations in Lib Interfaces
-**what**: a duration in a lib's public interface.
+A duration in a lib's public interface.
 
 **wrong**: `jiff::SignedDuration` in a lib that does not otherwise use `jiff`.
 
@@ -29,7 +29,7 @@ struct Yak;
 
 ## Tracing
 ### Spans
-**what**: tracing spans around functions.
+Tracing spans around functions.
 
 **wrong**:
 ```rust

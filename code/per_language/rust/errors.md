@@ -2,7 +2,7 @@
 Stack: [`thiserror`](https://docs.rs/thiserror) + [`miette`](https://docs.rs/miette) + `std::backtrace::Backtrace` + `#[wrap_err]` from [`v_utils_macros`](https://docs.rs/v_utils_macros) (re-exported as `v_utils::macros`).
 
 ## Crate Setup
-**what**: a crate that declares error types with `#[wrap_err]`.
+A crate that declares error types with `#[wrap_err]`.
 
 **wrong**: `v_utils` alone; the expansion fails on the missing `tracing_error` and on `provide()`.
 
@@ -22,7 +22,7 @@ v_utils = { version = "2", features = ["macros"] }
 **reason**: `#[wrap_err]` injects `backtrace: Backtrace` and `spantrace: SpanTrace` fields; `thiserror` provides the backtrace only under that feature.
 
 ## Leaf Errors
-**what**: an error that starts here, with no source.
+An error that starts here, with no source.
 
 **wrong**:
 ```rust
@@ -52,7 +52,7 @@ return Err(MyError::new_invalid(name));
 **reason**: `#[leaf]` injects `backtrace` and `spantrace` and generates a `new_<variant>(…)` constructor that captures both, so call sites carry nothing but the fields. On a struct the constructor is `new(…)`.
 
 ## Wrapping Foreign Errors
-**what**: wrapping an error from `std`, `reqwest`, `serde_json`, etc., which carries no backtrace of its own.
+Wrapping an error from `std`, `reqwest`, `serde_json`, etc., which carries no backtrace of its own.
 
 **wrong**:
 ```rust
@@ -71,7 +71,7 @@ some_io_result?;
 **reason**: `#[foreign]` becomes `{ source, backtrace, spantrace }` with a `From` impl that captures both at the `?`. A bare `#[from]` records nothing about where it happened.
 
 ## Wrapping Our Own Errors
-**what**: wrapping one of our error types, which already carries a backtrace.
+Wrapping one of our error types, which already carries a backtrace.
 
 **wrong**:
 ```rust
@@ -90,7 +90,7 @@ produces_inner_result()?;
 **reason**: `#[own]` expands to `#[error(transparent)] Inner(#[from] #[backtrace] InnerError)`, so `provide()` hands out the inner error's backtrace, which points at where it actually started. `#[foreign]` would capture a second one at the `?`.
 
 ## Catch-All Variant
-**what**: an `Other(eyre::Report)` escape hatch.
+An `Other(eyre::Report)` escape hatch.
 
 **wrong**:
 ```rust
@@ -108,7 +108,7 @@ Other(eyre::Report),
 **reason**: a diagnostic code is for a typed variant where it tells the reader what to do. Nobody matches on `err.code()` strings, and "other" tells them nothing.
 
 ## Backtrace Field
-**what**: where a backtrace lives in an error type.
+Where a backtrace lives in an error type.
 
 **wrong**: `MyError(Backtrace)`
 
