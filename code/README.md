@@ -8,7 +8,9 @@ each language folder in [./per_language], can have its own:
   - right way
   - reasoning
   > must not contradict top-level.
-  
+
+  sections are topics, in the order a piece of work meets them (design → write → verify), with `Other` always last. Inside one, rules go from the widest scope to the narrowest; a lax list goes before full rules. A rule joins an existing topic when it fits one; once `Other` holds several rules of one topic, that topic gets its own section.
+
   default rendering is having last 3 clearly named, with keywords as boldened prefixes.
   However, there is no standard forcing this. There are cases where such is the most efficient way to convey the information, and there are cases where it absolutely isn't. // Oh, and `what` is never mentioned as a prefix ever, - that's what description is, - first line after the header is already assumed to be that.
 
