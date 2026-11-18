@@ -168,6 +168,15 @@ class Klines:
 - Assert relationships of compile-time constants (Rust: `const _: () = assert!(A % B == 0);`), as a sanity check and to document [subtle invariants](https://github.com/tigerbeetle/tigerbeetle/blob/db789acfb93584e5cb9f331f9d6092ef90b53ea6/src/vsr/journal.zig#L45-L47). These check the design before the program even runs.
 - On occasion, a blatantly true assertion beats a comment, as stronger documentation where the condition is critical and surprising.
 
+### Single Test Entry Point
+All tests run through `nix run .#test`; none exist outside it.
+
+- `nix run .#test`: fast tests only. This is what runs locally, in pre-commit and pre-push hooks.
+- `nix run .#test -- --slow-too`: fast and slow. Runs only in CI, and is required for PRs.
+- Q: `--slow-only`: do we ever want it?
+
+**reason**: local feedback stays fast enough that nobody skips it. Slow tests still gate every merge. For sites this lines up with checking the PR branch's dev-prod deployment.
+
 ## Other
 ### [No Implicit Defaults](https://github.com/tigerbeetle/tigerbeetle/blob/main/docs/TIGER_STYLE.md#safety)
 Defaults, on both sides of a call.
