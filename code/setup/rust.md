@@ -9,3 +9,11 @@ To also cache cargo runs outside our devShells, add to `~/.cargo/config.toml`:
 [build]
 rustc-wrapper = "kache"
 ```
+
+Check that the daemon runs: `kache daemon` must show `Daemon running`. Without it, kache still caches, but every rustc runs the whole engine on its own: a cache hit then costs ~0.4–2 s instead of ~0.1 s. Reasons are in `~/.cache/kache/daemon.log`.
+
+The store gains from a filesystem with reflinks (XFS, btrfs): hits restore without copying. To move it there, set `local_store` in `~/.config/kache/config.toml`. If you move it with a symlink at `~/.cache/kache` instead, also set `runtime_dir` to the real directory: the daemon refuses to bind its socket in a symlinked directory and never starts.
+```toml
+[cache]
+runtime_dir = "/home/<you>/s/.kache" # where ~/.cache/kache points
+```
