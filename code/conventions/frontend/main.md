@@ -232,6 +232,24 @@ The data a design is drawn and checked with.
 **reason**: perfect data hides every truncation, overflow and contradiction until a user finds it.
 
 # Flow
+## [Every Tap Is a Cost](https://www.figma.com/design/uVD3gi5T7qkOLlavhTfrzL/UI-conventions?node-id=6-34)
+Taps, fields and screens between the user and the outcome.
+
+**wrong**: a timeline to read and "Start in 2 taps" where one button does it; a confirm step for what is undoable; a banner "Discover 100+ recipes" that has to be opened to see one.
+
+**right**: the same outcome in the fewest steps: one tap, the content itself where the banner was, undo instead of confirm.
+
+**reason**: every step is time and a place to lose the thread. Between two paths to the same outcome, the shorter one is better without exception.
+
+## [Stay on the Page](https://www.figma.com/design/uVD3gi5T7qkOLlavhTfrzL/UI-conventions?node-id=6-75)
+Opening something from a list, a map or a row.
+
+**wrong**: a click goes to a new page; Back returns to a list scrolled to the top with its filters reset, and the half-typed reply is gone.
+
+**right**: it opens where it was clicked: inline, in a panel beside the list, in a sheet over the map. The URL still names what is open, so it stays a link.
+
+**reason**: a page swap costs a load each way and drops everything the user was holding: the list, its scroll, its filters, what they were comparing it to, unsent input.
+
 ## [One Attention Order](https://www.figma.com/design/uVD3gi5T7qkOLlavhTfrzL/UI-conventions?node-id=1-915)
 Everything that tells a user what needs them: badges, a "next" button, notifications, counts on a menu.
 
