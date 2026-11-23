@@ -88,6 +88,11 @@ That's it. If you cannot articulate how a task will impact one of these, it is n
   We will never force {instructions, acceptance of terms of service / cookies, forced animations, click-through scaffoldings, "are you sure" popups, etc} upon users.
   Every single {click / second} saved, neccessary for a client to {give / keep giving} us money, is an enormous win.
 
+## Core Values
+
+there is just one. Speed. [It drives everything else](https://youtu.be/rRI0iH-cpjg?si=LX-qH9T3lJCX16D8).
+Elon's [running it the same way](https://www.youtube.com/watch?v=pRXMqm5bMFk); [5-step algorihm](../resources/The_Algorithm_-_Jon_McNeill.pdf) for approaching innovating on problems.
+
 ## Dev
 
 See [ARCHITECTURE.md](../docs/ARCHITECTURE.md) for this repo's organization, before making changes.
