@@ -5,15 +5,6 @@ Each linked heading opens its example, bad beside good, in [Figma · UI conventi
 Every rule below follows from one question: **what is the user deciding here, and what would help them decide?** A screen that cannot answer it has no reason to exist; an element that does not help the answer is cost.
 
 # Decision
-## [Ask the Easy Question](https://www.figma.com/design/uVD3gi5T7qkOLlavhTfrzL/UI-conventions?node-id=1-52)
-What a screen asks of the user, read as the question their head has to answer before acting.
-
-**wrong**: a paywall leading with the price and three feature bullets: the user, 30 seconds in, has to answer "is this worth $19 a month?".
-
-**right**: the same offer leading with "How your free trial works": today · day 5 we remind you · day 7 the first charge. The question becomes "can I try it for free?".
-
-**reason**: a hard question gets "later", which means never. The offer is the same; what changes is the question it lands on.
-
 ## [Connected Decisions in One View](https://www.figma.com/design/uVD3gi5T7qkOLlavhTfrzL/UI-conventions?node-id=1-112)
 Choices that affect each other: filters and their results, a setting and what it changes, an object and the action on it.
 
@@ -30,7 +21,7 @@ What the user gets before the product asks for anything: an account, a payment, 
 
 **right**: the score and the top issues are shown; "Save the full report" comes after them.
 
-**reason**: a wall before any value reads as a hostage, and is closed. Value first makes the ask a continuation.
+**reason**: the user cannot judge whether an ask is worth it before seeing what it buys, and what is already computed costs nothing to show.
 
 ## Robust Beats More
 Which features exist.
@@ -58,14 +49,14 @@ Options, actions and lists: what choosing them gives or takes.
 
 **reason**: the user decides before clicking. A choice whose outcome is only learned after it is a gamble, and a gamble gets avoided or undone.
 
-## [Specific Beats Vague](https://www.figma.com/design/uVD3gi5T7qkOLlavhTfrzL/UI-conventions?node-id=1-271)
-Numbers, times and words.
+## [Specific Beats Vague](https://www.figma.com/design/uVD3gi5T7qkOLlavhTfrzL/UI-conventions?node-id=4-29)
+Times, dates and labels.
 
-**wrong**: a price range "$13–17", "fast delivery", "Book a viewing", "Mar 28 – Apr 2".
+**wrong**: "fast", "Mar 28 – Apr 2", "Book a viewing".
 
-**right**: one number "$15", "2 min away", "Book Sat 11:30", "Fri, Mar 28 – Wed, Apr 2 · 5 nights".
+**right**: "2 min away · arrives 12:53", "Fri, Mar 28 – Wed, Apr 2 · 5 nights", "Book Sat 11:30".
 
-**reason**: a range is read at its worst end; a vague word is not believed. A specific one is checkable, so it is trusted, and it saves the arithmetic.
+**reason**: a specific value is one the user can plan and compare with; a vague one sends them to find it out or count it themselves.
 
 ## [Speak the User's Units](https://www.figma.com/design/uVD3gi5T7qkOLlavhTfrzL/UI-conventions?node-id=1-304)
 What the system needs against what the user knows.
@@ -122,14 +113,14 @@ A choice among a few known values.
 
 **reason**: a dropdown makes the user click, scroll and read to learn what exists. A visible option costs a glance; selection cannot be mistyped.
 
-## [Input Fits Its Frequency](https://www.figma.com/design/uVD3gi5T7qkOLlavhTfrzL/UI-conventions?node-id=1-534)
+## [Input Fits the Data](https://www.figma.com/design/uVD3gi5T7qkOLlavhTfrzL/UI-conventions?node-id=4-125)
 How a value is entered.
 
-**wrong**: a slider for a weight logged daily to the gram; a text field for a one-time pick from a known range.
+**wrong**: a slider alone for a value that has to be exact (leverage 23x); a bare field for a value inside a range the user cannot see; a stepper for a target the user already knows.
 
-**right**: sliders and wheels for rare, imprecise picks inside a known range; a number field or stepper for frequent, precise entry; segments when the target is known ("2+" over a stepper).
+**right**: the control follows the value: a bounded range gets a slider with its common values marked, an exact value a field. A precise value inside a range gets both, editing one value (leverage: field with −/+ over a 1x–100x slider). Segments when the target is one of a few ("2+").
 
-**reason**: the same value costs differently by how often and how exactly it is entered.
+**reason**: a slider shows where a value sits in its range but cannot hit an exact one; a field hits it but hides the range. The data decides which the user needs, often both.
 
 ## [Prefill From What Is Known](https://www.figma.com/design/uVD3gi5T7qkOLlavhTfrzL/UI-conventions?node-id=1-576)
 Fields the system already has an answer for.
@@ -149,12 +140,12 @@ A control that cannot act right now.
 
 **reason**: a vanished control reads as a missing feature, and its layout shifts. A reason tells the user what to fix.
 
-## [The Action Names Its Target](https://www.figma.com/design/uVD3gi5T7qkOLlavhTfrzL/UI-conventions?node-id=1-632)
+## [The Action Names Its Target](https://www.figma.com/design/uVD3gi5T7qkOLlavhTfrzL/UI-conventions?node-id=4-52)
 Buttons, agent suggestions, menu items.
 
-**wrong**: "Submit", "Add to cart", "Draft reply" in a list of three places.
+**wrong**: "Submit", "Draft reply" beside a place with 4 suspended reviews and 2 unanswered.
 
-**right**: "Appeal 3 suspended", "Draft replies for Guillotière · 2", "Start my free trial".
+**right**: "Appeal 4 suspended", "Draft 2 replies".
 
 **reason**: the label is the last check before acting. One that names what happens and to what makes the check possible.
 
@@ -222,14 +213,14 @@ A dark theme.
 
 **reason**: the eye separates dark values worse than light ones; inverted contrast is either mud or glare.
 
-## [Size by Job](https://www.figma.com/design/uVD3gi5T7qkOLlavhTfrzL/UI-conventions?node-id=1-863)
+## [Size by Job](https://www.figma.com/design/uVD3gi5T7qkOLlavhTfrzL/UI-conventions?node-id=4-79)
 How much room an element takes.
 
-**wrong**: a listing photo squeezed to a thumbnail on a page meant to make someone want the place; an operator table padded like a landing page.
+**wrong**: a listing photo squeezed to a thumbnail where the user picks a place by its photos; an operator table padded like a landing page.
 
-**right**: a page that has to create desire gives the photo half the screen; a tool that has to be scanned is dense, with sort, search and filter in reach.
+**right**: what the user judges by gets the room (the photo, with "1 / 24"); a list to scan is dense, with sort, search and filter in reach.
 
-**reason**: identifying a thing and wanting it are different jobs. Above-the-fold cramming fails both; the first thing seen has to be worth continuing for.
+**reason**: content too small to judge has to be opened to be judged; padding in a list to scan is scrolling.
 
 ## [Real Content](https://www.figma.com/design/uVD3gi5T7qkOLlavhTfrzL/UI-conventions?node-id=1-836)
 The data a design is drawn and checked with.
@@ -269,15 +260,6 @@ The same screen for a newcomer and an expert.
 **reason**: what helps a first decision is noise to the hundredth.
 
 # Other
-## [Persuade With Truth](https://www.figma.com/design/uVD3gi5T7qkOLlavhTfrzL/UI-conventions?node-id=1-977)
-Anchors, urgency, social proof, framing.
-
-**wrong**: a fake starting progress, a loss threat ("I'll risk it"), an invented "was" price, a pre-selected rating.
-
-**right**: a real reference price, a real count ("221 reviews", "500+ sold this week"), "We remind you before we charge", the downside stated before it is asked about.
-
-**reason**: the cheap trick converts once and is found out after. Transparency is what makes the next number believed.
-
 ## [Fewest Words](https://www.figma.com/design/uVD3gi5T7qkOLlavhTfrzL/UI-conventions?node-id=1-1002)
 Copy.
 
