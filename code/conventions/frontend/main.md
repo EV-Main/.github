@@ -241,14 +241,14 @@ Taps, fields and screens between the user and the outcome.
 
 **reason**: every step is time and a place to lose the thread. Between two paths to the same outcome, the shorter one is better without exception.
 
-## [Stay on the Page](https://www.figma.com/design/uVD3gi5T7qkOLlavhTfrzL/UI-conventions?node-id=6-75)
-Opening something from a list, a map or a row.
+## [Stay on the Page](https://www.figma.com/design/uVD3gi5T7qkOLlavhTfrzL/UI-conventions?node-id=7-41)
+Anything the user opens from where they are: a payment, a date picker, settings, an item from a list.
 
-**wrong**: a click goes to a new page; Back returns to a list scrolled to the top with its filters reset, and the half-typed reply is gone.
+**wrong**: it takes them away: "Continue to payment" leaves for the provider's page and "Return to merchant"; settings is its own route.
 
-**right**: it opens where it was clicked: inline, in a panel beside the list, in a sheet over the map. The URL still names what is open, so it stays a link.
+**right**: it floats over the page they are on, and closing it puts them back exactly there.
 
-**reason**: a page swap costs a load each way and drops everything the user was holding: the list, its scroll, its filters, what they were comparing it to, unsent input.
+**reason**: leaving costs a load each way and drops what the user was holding: their place, their context, what they half typed.
 
 ## [One Attention Order](https://www.figma.com/design/uVD3gi5T7qkOLlavhTfrzL/UI-conventions?node-id=1-915)
 Everything that tells a user what needs them: badges, a "next" button, notifications, counts on a menu.
