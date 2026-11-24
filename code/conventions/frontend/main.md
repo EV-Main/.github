@@ -277,6 +277,9 @@ The same screen for a newcomer and an expert.
 
 **reason**: what helps a first decision is noise to the hundredth.
 
+# Loading
+What comes when, where a wait is shown and what it says: [load_time_consequences.md](./load_time_consequences.md).
+
 # Other
 ## [Fewest Words](https://www.figma.com/design/uVD3gi5T7qkOLlavhTfrzL/UI-conventions?node-id=1-1002)
 Copy.
